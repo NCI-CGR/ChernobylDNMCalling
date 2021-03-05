@@ -54,12 +54,12 @@ The code is designed to be run on SGE. However, it can be modified to run in oth
 **Step 1:** `create_manifest.py` uses `combined_manifest.txt` above to create a folder for each trio (separate folders for each offspring) and deposits a manifest.txt file into each trio folder. The input BAM and output data directories for the trio are inherited from `params.config`.
 
 ```
-outId   t0008c1
-child	  SC400008
-mom     SC400006
-dad     SC400009
+outId t0008c1
+child SC400008
+mom SC400006
+dad SC400009
 bamDir  /projects/dnm/bams
-dataDir	/projects/dnm/trios/t0008c1
+dataDir /projects/dnm/trios/t0008c1
 ```
 
 **Step 2:** `submit_hc_qsub.sh` calls `runHc_b38_qsub.sh` for each trio using parameters defined in the trio's manifest.txt and submits a job to the cluster for variant calling using HaplotypeCaller. GATK Queue was used for scattering and gathering HC jobs at the time this code was developed. However, this variant calling step can modified to use current GATK best practices.
