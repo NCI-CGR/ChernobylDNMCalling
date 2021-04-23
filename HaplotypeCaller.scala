@@ -1,3 +1,5 @@
+// Adapted from https://github.com/UMCUGenetics/GATK-QScripts
+
 package org.broadinstitute.gatk.queue.qscripts
 
 import java.io.PrintWriter
